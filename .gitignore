@@ -2,7 +2,8 @@
 .env
 .env.*
 !.env.example
-credentials/
+credentials/*
+!credentials/.gitkeep
 
 # Python
 __pycache__/
