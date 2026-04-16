@@ -40,14 +40,6 @@ cp .env.example .env
 
 ## Kjøring
 
-### Lokalt
-
-```bash
-./run.sh
-```
-
-### Docker
-
 ```bash
 docker compose up --build
 ```

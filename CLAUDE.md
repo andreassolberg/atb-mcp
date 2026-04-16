@@ -8,9 +8,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Install dependencies
 uv sync --dev
 
-# Run server locally
-./run.sh
-
 # Run all tests
 uv run pytest
 
