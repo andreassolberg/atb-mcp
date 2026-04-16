@@ -7,7 +7,7 @@ services:
       - ./credentials:/app/credentials:ro
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/sa-key.json
-      - GCP_PROJECT=solberg-cluster
+      - GCP_PROJECT=${GCP_PROJECT}
       - BQ_MAX_BYTES_GB=10
       - MCP_TRANSPORT=http
       - MCP_HOST=0.0.0.0
