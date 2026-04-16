@@ -4,7 +4,7 @@
 
 Enturs sanntids-API (`/realtime/v1/rest/et`) returnerer kun navarende tilstand - ingen historikk.
 Historisk data finnes i **Google BigQuery**, gratis tilgjengelig via `data.entur.no`.
-Robin Kaveland (kaaveland/bus-eta) brukte nettopp dette for a bygge sin analyse med data tilbake til 2020.
+Dette er også brukt som grunnlag for lignende analyseprosjekter med data tilbake til 2020.
 
 Malet er et Python-prosjekt som kjorer i Docker, spor direkte mot BigQuery, og senere kan bli en MCP-server.
 
@@ -102,7 +102,7 @@ Estimerte tider tatt pa ulike tidspunkter for ankomst/avgang. Brukes for a analy
 
 ### Relaterte tabeller (national_stop_registry)
 
-Robin bruker ogsa disse for a berike med koordinater og stoppested-metadata:
+Disse brukes for a berike med koordinater og stoppested-metadata:
 
 - `national_stop_registry.quays_last_version` - Plattformer/quays med koordinater
 - `national_stop_registry.stop_places_last_version` - Stoppesteder med navn, sone, transportmodus
@@ -115,7 +115,7 @@ pyarrow                  # Effektiv dataoverfor fra BigQuery (Arrow-format)
 db-dtypes                # BigQuery-spesifikke datatyper for pandas/arrow
 ```
 
-Robins kode bruker `google.cloud.bigquery.Client` med parameteriserte sporringer:
+`google.cloud.bigquery.Client` brukes med parameteriserte sporringer:
 
 ```python
 from google.cloud import bigquery
@@ -213,6 +213,6 @@ MCP-serveren kjorer ogsa i Docker, og er da tilgjengelig som en ekstern MCP-serv
 
 - BigQuery-tabellen: https://data.entur.no/public/datasets/realtime_siri_et
 - Enturs eksempelspørringer: https://colab.research.google.com/drive/1UqMTS1JQhN7z07iX57X2Epg3x3ugx4x7
-- Robins bloggpost: https://kaveland.no/posts/2025-05-28-turning-the-bus-sql/
-- Robins kode: https://github.com/kaaveland/bus-eta
+- Bloggpost om tilsvarende analyse: https://kaveland.no/posts/2025-05-28-turning-the-bus-sql/
+- Eksempelkode (bus-eta): https://github.com/kaaveland/bus-eta
 - Kontakt Entur data-team: team.dataanalyse@entur.org
